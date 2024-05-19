@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pizza Order Calculator</title>
+    <style>
+        body,html {
+      margin: 0px;
+      font-family:'Arial Narrow Bold';
+      font-size: large;
+      background-image: url(bg5.png);
+      align-content: center;
+      font-family: 'Times New Roman', Times, serif
+    }
+        h3 {
+            padding-top: 5px;
+            text-align: center;
+        }
+        #calculator-form {
+            width: 600px;
+            height: 600px;
+            border-radius: 5px;
+            margin: 0 auto;
+            text-align: justify;
+        }
+        #result {
+            font-weight: bold;
+            float: right;
+            margin-top: 20px;
+        }
+        .pizza-images {
+            display:flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+        .pizza-images img {
+            max-width: 150px;
+            max-height: 150px;
+            margin-bottom: 10px;
+        }
+        
+        #convbtn,#convbtn2{
+            display: block;
+            float:right;
+            padding: 5px 10px;
+            width: 280px;
+            height: 50px;
+            border-radius:5px;
+            border-width: 1px;
+            margin-left: 35px;
+            margin-bottom: 15px;
+            background-color: lightcoral;
+            color: whitesmoke;
+            font-family: 'Arial Narrow Bold';
+            font-size: 20px;
+            
+        }
+        #convbtn:hover,#convbtn2:hover {
+            transform: scale(1.2);
+            transition: transform 0.1s ease-in;
+
+        }
+        form{
+            background-color:lavenderblush;
+            width: 330px;
+            padding: 30px;
+            
+            border-radius: 5px;
+            font-family:'Arial Narrow Bold';
+            box-shadow: 0 3px 5px rgb(0, 0, 0);
+            border-color: rgb(238, 130, 130);
+            
+        }
+        
+  ul {
+            list-style-type: none;
+            margin: 0;
+            overflow:hidden;
+
+            background-color:rgb(240, 128, 128);
+            text-wrap: wrap;
+        }
+
+        ul li {
+            display: inline-block;
+            width: 30%;
+            padding: 12px;
+            transition: transform 0.3s ease;
+        }
+
+        ul li a {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            display: block;
+        }
+
+        ul li:hover {
+            background-color: rgb(165, 42, 42);
+            transform: scale(1.1);
+        }
+                
+                .pizza-images img{
+                    border-radius: 40%;
+                    transition: transform 0.3s ease;
+
+                }
+                .pizza-images img:hover{
+                    border-radius: 40%;
+                    transform: scale(1.1) ;
+                    
+                }
+
+    </style>
+</head>
+<body>
+    <div class="n1">
+        <ul>
+          <li><a href="calculator.html">CALCULATOR</a></li>
+          <li><a href="emi.html">LOAN CALCULATOR</a></li>
+          <li><a href="pizza.html">PIZZA ORDER FORM</a></li>
+            
+        </ul>
+    </div>
+    <h3>Pizza Order Calculator</h3>
+    <div class="pizza-images">
+        <div>
+            <img src="peppiz.jpg" width="500px" height="380px" alt="Margherita Pizza">
+            <input type="checkbox" id="margherita-checkbox" name="pizza-type" value="Margherita">
+            <label for="margherita-checkbox">Pepperoni Pizza</label>
+        </div>
+        <div>
+            <img src="cheese.jpg" width="500px" height="380px" alt="Pepperoni Pizza">
+            <input type="checkbox" id="pepperoni-checkbox" name="pizza-type" value="Pepperoni">
+            <label for="pepperoni-checkbox">Cheese Pizza</label>
+        </div>
+        <div>
+            <img src="veg.jpg" width="500px" height="380px" alt="Vegetarian Pizza">
+            <input type="checkbox" id="vegetarian-checkbox" name="pizza-type" value="Vegetarian">
+            <label for="vegetarian-checkbox">Chicken Pizza</label>
+        </div>
+    </div>
+
+    <form id="calculator-form">
+        <label for="size">Pizza Size:</label>
+        <select id="size">
+            <option value="8">8-inch</option>
+            <option value="10">10-inch</option>
+            <option value="12">12-inch</option>
+            <option value="14">14-inch</option>
+        </select><br><br>
+
+        <label for="toppings">Toppings:</label><br><br>
+        <input type="checkbox" id="pepperoni" name="toppings" value="pepperoni">
+        <label for="pepperoni">Olives</label><br>
+        <input type="checkbox" id="mushrooms" name="toppings" value="mushrooms">
+        <label for="mushrooms">Onions</label><br>
+        <input type="checkbox" id="sausage" name="toppings" value="sausage">
+        <label for="sausage">Capsicum</label><br><br>
+        <label for="quantity">Quantity:</label>
+     
+        <input type="number" id="quantity" min="1" value="1" required><br><br>
+       
+        <label for="email">Email:</label>
+        <input type="email" id="email" required placeholder="john@example.com"><br><br>
+
+        <label for="mobile">Mobile Number:</label>
+        <input type="tel" id="mobile" pattern="[0-9]{10}" required placeholder="+91"><br><br>
+   
+        <label for="address">Address:</label>
+        <input type="text" id="address" required placeholder="Delivery Address"><br><br>
+        <label style="color:rgb(255, 0, 72)">*</label><input type="checkbox" id="terms" required>
+        <label for="terms">I agree to the terms and conditions</label><br><br>
+        <button type="button" id="convbtn" onclick="calculateTotal()">Calculate Total</button>
+        <div id="result"></div>
+
+        <button type="button" id="convbtn2" onclick="orderNow()">Order Now</button>
+
+    </form>
+  
+    <script>
+        function orderNow() {
+            const selectedPizzas = document.querySelectorAll('input[name="pizza-type"]:checked');
+            if (selectedPizzas.length === 0) {
+                alert("Please select at least one pizza type.");
+                return;
+            }
+
+            alert("Your order has been placed!");
+        }
+        
+        
+    function calculateTotal() {
+        const selectedPizzas = document.querySelectorAll('input[name="pizza-type"]:checked');
+        if (selectedPizzas.length === 0) {
+            alert("Please select at least one pizza type.");
+            return;
+        }
+
+        const size = parseInt(document.getElementById('size').value);
+        const toppings = document.querySelectorAll('input[name="toppings"]:checked').length;
+        const basePriceINR = getPizzaPriceINR(selectedPizzas[0].value);
+        const toppingsCostINR = toppings * 10; // 10 INR for each topping
+        const subtotalINR = (basePriceINR + toppingsCostINR) * parseInt(document.getElementById('quantity').value);
+        const taxINR = subtotalINR * 0.09; // 9% tax
+        const totalINR = subtotalINR + taxINR;
+
+        document.getElementById('result').innerHTML = `
+            <p>Subtotal: ${subtotalINR.toFixed(2)} INR</p>
+            <p>Tax (9%): ${taxINR.toFixed(2)} INR</p>
+            <p>Total (including tax): ${totalINR.toFixed(2)} INR</p>
+        `;
+    }
+
+    function getPizzaPriceINR(pizzaType) {
+        switch(pizzaType) {
+            case 'Margherita':
+                return 500; // 500 INR for Margherita
+            case 'Pepperoni':
+                return 600; // 600 INR for Pepperoni
+            case 'Vegetarian':
+                return 550; // 550 INR for Vegetarian
+            default:
+                return 500; // Default to Margherita price
+        }
+    }
+
+
+
+
+
+        function getPizzaPrice(pizzaType) {
+            switch(pizzaType) {
+                case 'Margherita':
+                    return 10;
+                case 'Pepperoni':
+                    return 12;
+                case 'Vegetarian':
+                    return 11;
+                default:
+                    return 10; // Default to Margherita price
+            }
+        }
+    </script>
+</body>
+</html>

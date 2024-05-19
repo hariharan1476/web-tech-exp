@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EMI Loan Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin:0;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body,html{
+            background-image: url(newemi.avif);
+        }
+        label {
+            font-weight: bold;
+        }
+        #loan-form{
+            border-radius: 0 10px 10px 10px;
+            background-color: rgb(102, 185, 210);
+            width: 400px;
+            height: 350px;
+            margin-left: 450px;
+            margin-top: 100px;
+
+        
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        h1{
+            background-color:rgb(42, 165, 163);
+            text-align: center;
+        }
+        button {
+            padding: 10px 50px;
+            font-size: 16px;
+            margin: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        ul {
+        list-style-type: none;
+        margin: 0;
+        overflow:hidden;
+
+        background-color:rgb(128, 191, 240);
+        text-wrap: wrap;
+    }
+
+    ul li {
+        display: inline-block;
+        width: 30%;
+        padding: 15px;
+        transition: transform 0.3s ease;
+    }
+
+    ul li a {
+        text-decoration: none;
+        text-align: center;
+        color: white;
+        display: block;
+    }
+
+    ul li:hover {
+        background-color: rgb(42, 138, 165);
+        transform: scale(1.1);
+    }
+    </style>
+    
+</head>
+<body>
+    <div class="n1">
+        <ul>
+          <li><a href="calculator.html">CALCULATOR</a></li>
+          <li><a href="emi.html">LOAN CALCULATOR</a></li>
+          <li><a href="pizza.html">PIZZA ORDER FORM</a></li>
+            
+        </ul>
+    </div>
+    <h1>EMI Loan Calculator</h1>
+    <form id="loan-form">
+        <label for="loan-amount">Loan Amount </label>
+        <input type="number" id="loan-amount" required>
+        <br>
+        <label for="loan-tenure">Loan Tenure </label>
+        <input type="number" id="loan-tenure" required>
+        <br>
+        <label for="interest-rate">Interest Rate % </label>
+        <input type="number" id="interest-rate" required>
+        <br>
+        <button type="button" onclick="clearFields()">Clear</button>
+        <button type="button" onclick="calculateEMI()">Calculate</button>
+        <br>
+        <h3 >Answer:</h3>
+        <h2 id="emi-result">Monthly Payment Value:</h2>
+    </form>
+
+    <script>
+        function calculateEMI() {
+            const principal = parseFloat(document.getElementById('loan-amount').value);
+            const tenure = parseFloat(document.getElementById('loan-tenure').value);
+            const rate = parseFloat(document.getElementById('interest-rate').value) / 100;
+
+            const monthlyInterest = (principal * rate) / tenure;
+            const totalEMI = ((principal / tenure) + monthlyInterest).toFixed(2);
+
+            document.getElementById('emi-result').textContent = `Monthly Payment Value: ₹${totalEMI}`;
+        }
+
+        function clearFields() {
+            document.getElementById('loan-amount').value = '';
+            document.getElementById('loan-tenure').value = '';
+            document.getElementById('interest-rate').value = '';
+            document.getElementById('emi-result').textContent = '';
+        }
+    </script>
+</body>
+</html>

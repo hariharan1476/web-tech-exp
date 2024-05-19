@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            font-size: large;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        body,html{
+            background-image: url(calculaterimg.webp);
+        }
+        label {
+            font-weight: bold;
+        }
+        input[type="number"] {
+            width: 200px;
+            padding: 10px;
+            margin: 10px;
+        }
+        #button1 {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: rgb(226, 43, 125);
+        }
+        #button2 {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: rgb(179, 149, 207);
+        }
+        #button3 {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: rgb(255, 190, 69);
+        }
+        #button4 {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: rgb(255, 241, 47);
+        }
+        #button5 {
+            padding: 10px 20px;
+            font-size: 16px;
+            margin: 10px;
+            background-color: rgb(133, 241, 255);
+        }
+        #calculator-form{
+            border-radius: 0 10px 10px 10px;
+            background-color: lightslategray;
+            width: 400px;
+            height: 280px;
+            margin-left: 450px;
+            margin-top: 100px;
+            padding: 10px;
+        }
+        ul {
+            list-style-type: none;
+            margin: 0;
+            overflow:hidden;
+
+            background-color:lightslategrey;
+            text-wrap: wrap;
+        }
+
+        ul li {
+            display: inline-block;
+            width: 30%;
+            padding: 15px;
+            transition: transform 0.3s ease;
+        }
+
+        ul li a {
+            text-decoration: none;
+            text-align: center;
+            color: white;
+            display: block;
+        }
+
+        ul li:hover {
+            background-color: brown;
+            transform: scale(1.1);
+        }
+    </style>
+    
+</head>
+<body>
+    <div class="n1">
+        <ul>
+          <li><a href="calculator.html">CALCULATOR</a></li>
+          <li><a href="emi.html">LOAN CALCULATOR</a></li>
+          <li><a href="pizza.html">PIZZA ORDER FORM</a></li>
+            
+        </ul>
+    </div>
+    <h1>Simple Calculator</h1>
+    <form id="calculator-form">
+        <label for="first-number">Enter 1st number:</label>
+        <input type="number" id="first-number" required>
+        <br>
+        <label for="second-number">Enter 2nd number:</label>
+        <input type="number" id="second-number" required>
+        <br>
+        <label for="result">Answer:</label>
+        <input type="text" id="result" readonly>
+        <br>
+        <button type="button" id="button1" onclick="performOperation('+')">+</button>
+        <button type="button" id="button2" onclick="performOperation('-')">-</button>
+        <button type="button" id="button3" onclick="performOperation('*')">*</button>
+        <button type="button" id="button4" onclick="performOperation('/')">/</button>
+        <button type="button" id="button5" onclick="clearFields()">Clear</button>
+    </form>
+
+    <script>
+        function performOperation(operator) {
+            const num1 = parseFloat(document.getElementById('first-number').value);
+            const num2 = parseFloat(document.getElementById('second-number').value);
+            let result;
+
+            switch (operator) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+                default:
+                    result = 'Invalid operator';
+            }
+
+            document.getElementById('result').value = result;
+        }
+
+        function clearFields() {
+            document.getElementById('first-number').value = '';
+            document.getElementById('second-number').value = '';
+            document.getElementById('result').value = '';
+        }
+    </script>
+</body>
+</html>
