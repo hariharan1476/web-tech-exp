@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ex 3</title>
+    <link rel="icon" type="image/x-icon" href="fav.jpg">
+    <style>
+        *{
+            margin: 0px;
+            padding:0px;
+            box-sizing: border-box;
+        }
+        .headf1{
+            background-color: blueviolet;
+            height: 100px;
+            text-align: center;
+        }
+        img{
+            width: 100px;
+            height: 100px;
+            position: absolute;
+            left: 0px;
+        }
+        #text{
+            font-size: 48px;
+            text-align: center;
+            top: 50px;
+            position: relative;
+            text-shadow: 5px 5px gray;
+        }
+        .headf2{
+            background-image: url('img2.jpg');
+            height: 250px;
+            background-size: cover;
+            position: relative;
+        }
+        .f2{
+            border: 5px  dashed  black;
+            border-left: 5px dotted;
+            height: 250px;
+            width: 250px;
+            background-color:pink;
+            text-align: justify;
+            padding: 20px;
+            position: relative;
+            left: 50px;
+        }
+        .sec2 {
+            position: relative;
+            display:flex;
+            justify-content: space-between;
+            background-color: rgb(255, 83, 255);
+        }
+
+        .col {
+            flex: 0.5;
+            margin: 10px;
+            position: relative;
+        }
+
+        .image{
+            position: relative;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            background-color: #fff;
+        }
+
+        .txts {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: #fff;
+            width: 100%;
+            padding: 10px;
+            border: 2px solid red;
+            text-align: center;
+        }
+        .sec4 {
+            position: relative;
+            background-color: violet;
+        }
+        .sec4 .content4 img{
+            position: relative;
+            float: right;
+            width: 250px;
+            height: auto;
+        }
+        .sec4 h3 p{
+            height:250px;
+            position: absolute;
+            text-align: justify;
+        }
+        .f5{
+            background-color:rgb(255, 255, 255);
+            height: 250px;
+        }
+        .f55{
+            text-align: left;
+            font-size: 30px;
+        }
+        .f555{
+            text-align:justify;
+            position: absolute;
+        }
+        .f5i{
+            position: absolute;
+            float: right;
+            height: 250px;
+            width: 250px;
+            right: 0px;
+        }
+        .f6{
+            background-color:rgb(245, 208, 90);
+            height: 200px;
+        }
+        .f66{
+            text-align: center;
+            font-size: 30px;
+            color: red;
+            text-decoration: underline;
+            position: relative;
+            top:50px;
+        }
+        .f666{
+            font-size: 22px;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            top:64px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="headf1">
+            <img src="img1.jpeg" alt="our_logo">
+            <div id="text">Hari kutty Companiesss</div>
+        </div>
+    </header>
+    <div class="headf2">
+       <div class="f2">Hi, I am Hari from Coimbatore, India. I studying in Karunya University as a AI Engineer Data. Have learnt and used the classical Machine Learning algorithms and am eager to learn Deep Learning. Mostly interested in using Deep Learning for NLP and structured data. I am looking forward to learning and sharing with you all.</div> 
+    </div>
+    <div class="sec2">
+        <div class="col">
+          <img class="image" src="html.png" alt="Image 1">
+          <div class="txts">HTML</div>
+        </div>
+        <div class="col">
+          <img class="image" src="css.png" alt="Image 2">
+          <div class="txts">CSS</div>
+        </div>
+        <div class="col">
+          <img class="image" src="js.jpg" alt="Image 3">
+          <div class="txts">JAVA SCRIPT</div>
+        </div>
+        <div class="col">
+          <img class="image" src="php.jpg" alt="Image 4">
+          <div class="txts">PHP</div>
+        </div>
+      </div>
+    <div class="f4">
+        <div class="f44"><b>About You</b></div>
+        <div class="f444">Hello Everyone,
+
+Greetings! I'm Hari,  I studying in Karunya University as a AI Engineer Data. Have learnt and used the classical Machine Learning algorithms and am eager to learn Deep Learning. Mostly interested in using Deep Learning for NLP and structured data. I am looking forward to learning and sharing with you all.
+
+Your passion for learning and your enthusiasm for sharing knowledge are admirable. As you embark on your Deep Learning journey, feel free to reach out for assistance, insights, or any questions you might have. Whether it's understanding complex concepts, exploring the latest advancements, or troubleshooting challenges, I'm here to support your endeavors.
+
+Coimbatore, India, is a vibrant place, and I hope your academic and AI pursuits thrive in such an environment. Keep up the great work, and remember that continuous curiosity and collaboration are key in the dynamic field of artificial intelligence.
+
+Looking forward to assisting you on your learning and sharing journey!
+        </div>
+    </div>
+    <div class="sec4">
+        <div class="content4"><h3>Your Intersets</h3>
+            <img src="group.jpeg" alt="Group Pics">
+        <p>TensorFlow:
+            Developed by Google, TensorFlow is an open-source machine learning framework that is widely used for deep learning projects. It provides a comprehensive ecosystem for building and deploying machine learning models, including support for neural networks and natural language processing.
+            PyTorch:
+            PyTorch, developed by Facebook, is another popular open-source deep learning library. It is known for its dynamic computation graph, making it particularly flexible and intuitive. PyTorch is widely used in research and industry for developing deep learning models.
+            Keras:
+            Keras is an open-source high-level neural networks API written in Python. It can run on top of TensorFlow, Theano, or Microsoft Cognitive Toolkit. Keras is known for its simplicity and ease of use, making it a great choice for beginners in deep learning.
+            scikit-learn:
+            While scikit-learn is primarily focused on classical machine learning, it is an excellent library for implementing and experimenting with various machine learning algorithms. It can be a valuable tool for tasks involving structured data.
+            Hugging Face Transformers:
+            Hugging Face provides an impressive library called Transformers that offers pre-trained models and a set of tools for working with state-of-the-art natural language processing models. It's a go-to resource for NLP tasks.
+            </p>
+        </div>
+    </div>
+    <div class="f6">
+        <div class="f66"><b>Address</b></div>
+        <div class="f666">Door No:177/52, Anna St,Mayiladuthurai Dt <br>TamilNadu-609001,India.</div>
+    </div>
+</body>
+</html>
