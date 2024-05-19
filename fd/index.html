@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Food Order</title>
+    <!-- Including external CSS file -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>FIT Food - Order Form</h1>
+        <label for="branchSelect">Choose Branch:</label>
+        <select id="branchSelect">
+            <option value="BranchA">Branch A</option>
+            <option value="BranchB">Branch B</option>
+            <option value="BranchC">Branch C</option>
+        </select><br><br>
+        <label for="username">Name:</label>
+        <input type="text" id="username" placeholder="Enter Your Name"><br><br>
+        <label for="mobileNumber">Mobile Number:</label>
+        <input type="tel" id="mobileNumber" placeholder="Enter Your Contact No." maxlength="10"><br><br>
+        <table id="menuTable">
+            <tr>
+                <th></th>
+                <th>Item</th>
+                <th>Price (LKR)</th>
+                <th>Quantity</th>
+            </tr>
+            <!-- Menu items populated dynamically via JavaScript -->
+        </table><br><br>
+        <button onclick="submitOrder()">Submit</button>
+        <button onclick="clearForm()">Clear</button>
+    </div>
+    <!-- External JavaScript file included -->
+    <script src="scripts.js"></script>
+</body>
+</html>

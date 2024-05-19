@@ -1,0 +1,58 @@
+/* Defining global styles */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc;
+}
+
+.container {
+    width: 60%;
+    margin: auto;
+    overflow: hidden;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+td, th {
+    text-align: left;
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: lightgray;
+}
+
+input[type='text'], input[type='tel'] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 8px;
+    margin-bottom: 8px;
+}
+
+button {
+    float: right;
+    cursor: pointer;
+    padding: 8px 16px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+    color: white;
+    border-radius: 10px;
+}
+
+button:hover {
+    opacity: 0.7;
+}
