@@ -1,0 +1,67 @@
+body {
+	font-family: Arial, sans-serif;
+  }
+  
+  h1 {
+	cursor: pointer;
+  }
+  
+  .blink {
+	animation: blink 2s infinite;
+  }
+  
+  @keyframes blink {
+	0% { color: transparent; }
+	50% { color: black; }
+	100% { color: transparent; }
+  }
+  
+  .accordion {
+	margin-bottom: 10px;
+  }
+  
+  .accordion-header {
+	background-color: #f1f1f1;
+	cursor: pointer;
+	padding: 10px;
+	user-select: none;
+  }
+  
+  .accordion-header:after {
+	content: '\002B';
+	color: #777;
+	font-weight: bold;
+	float: right;
+	margin-left: 5px;
+  }
+  
+  .accordion-header.active:after {
+	content: '\2212'; /* Minus sign */
+  }
+  
+  .accordion-content {
+	padding: 0 18px;
+	max-height: 0;
+	overflow: hidden;
+	transition: max-height 0.4s ease-out;
+	background-color: #777;
+  }
+  
+  .dropdown {
+	display: inline-block;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+  }
+  
+  .dropdown select {
+	padding: 5px;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	font-size: 14px;
+  }
+  
+  .blink {
+	animation-play-state: paused;
+  }
+  

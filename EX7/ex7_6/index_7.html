@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <style>
+
+        
+        #col_cir{
+            height : 100px;
+            width : 100px;
+            position : absolute;
+            border-radius: 50%;
+            background-color: #a4f21d;
+        }
+    </style>
+    <script>
+        $(document).ready(function(){
+            $('#b1').click(function(){
+         
+                let d=$('#col_cir');
+                d.animate({'left': '300px','height':'300px','width':'300px'},3000);
+
+                
+            })
+        });
+    </script>
+</head>
+<body>
+
+    <h1>Animation Example</h1><br/>
+    <button id="b1">Start/Stop Animation</button><br /><br />
+    <div id="cir1"></div>
+    <div id="col_cir"></div>
+
+</body>
+</html> 
