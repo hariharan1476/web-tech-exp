@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html ng-app="budgetApp">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Budget Calculator App</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 98%;
+            height: auto;
+            padding: 20px;
+            background-color: #fff;
+
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+
+            text-align: center;
+        }
+
+        input[type="number"] {
+            width: 30%;
+            padding: 10px;
+            margin: 10px;
+            border: 1px solid #ccc;
+            border-radius: 3px;
+            box-sizing: border-box;
+        }
+
+        .input-group {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .input-group label {
+            width: 20%;
+            text-align: right;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        button {
+            width: 40%;
+            padding: 10px;
+            color: #fff;
+            border: none;
+            border-radius: 3px;
+            cursor: pointer;
+            background-color: #8dc2d1;
+
+            background-size: cover;
+            box-sizing: border-box;
+        }
+
+        button:hover {
+            opacity: 0.9;
+        }
+
+        .result-box {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+            padding: 10px;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: #ddc5c5;
+        }
+
+        .result-item {
+            flex: 1;
+            padding: 10px;
+            border-radius: 3px;
+            box-sizing: border-box;
+            background-color: #fff;
+        }
+
+        .room-rent {
+            color: #9d00ff;
+        }
+
+        .accessories {
+            color: #28a745;
+        }
+
+        .emergency {
+            color: #dc3545;
+        }
+
+        .saving {
+            color: #ff69b4;
+        }
+
+        h1 {
+            margin-top: 0;
+            padding-top: 0;
+            background-color: #ffaa00;
+            color: #fff;
+            border-top-left-radius: 5px;
+            border-top-right-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+
+<body ng-controller="BudgetController">
+    <div class="container">
+        <h1>Budget Calculator App</h1>
+        <p>Enter Amount that you want to Manage:</p>
+        <div class="input-group">
+            <label>Total Amount:</label>
+            <input type="number" ng-model="totalAmount" placeholder="Enter amount">
+        </div>
+        <p>How would you like to divide your money?</p>
+        <div class="input-group">
+            <label>Room Rent (%):</label>
+            <input type="number" ng-model="roomRent" placeholder="Room Rent (%)">
+            <label>Accessories (%):</label>
+            <input type="number" ng-model="accessories" placeholder="Accessories (%)">
+            <label>Emergency (%):</label>
+            <input type="number" ng-model="emergency" placeholder="Emergency (%)">
+            <label>Saving (%):</label>
+            <input type="number" ng-model="saving" placeholder="Saving (%)">
+        </div>
+        <button ng-click="evaluateMoney()">Evaluate My Money</button>
+        <div class="result-box">
+            <div class="result-item room-rent">Room Rent: Rs. {{ roomRentAmount }}</div>
+            <div class="result-item accessories">Accessories: Rs. {{ accessoriesAmount }}</div>
+            <div class="result-item emergency">Emergency: Rs. {{ emergencyAmount }}</div>
+            <div class="result-item saving">Saving: Rs. {{ savingAmount }}</div>
+        </div>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <script>
+        angular.module('budgetApp', [])
+            .controller('BudgetController', function ($scope) {
+                $scope.evaluateMoney = function () {
+                    const total = parseFloat($scope.totalAmount);
+                    const roomRentPercent = parseFloat($scope.roomRent) / 100;
+                    const accessoriesPercent = parseFloat($scope.accessories) / 100;
+                    const emergencyPercent = parseFloat($scope.emergency) / 100;
+                    const savingPercent = parseFloat($scope.saving) / 100;
+
+                    $scope.roomRentAmount = (total * roomRentPercent).toFixed(2);
+                    $scope.accessoriesAmount = (total * accessoriesPercent).toFixed(2);
+                    $scope.emergencyAmount = (total * emergencyPercent).toFixed(2);
+                    $scope.savingAmount = (total * savingPercent).toFixed(2);
+                };
+            });
+    </script>
+</body>
+
+</html>
