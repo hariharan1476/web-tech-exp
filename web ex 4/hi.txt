@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="n1">
+        <ul>
+            <li class="logo-"><a href="signup.html">Study Sphere</a></li>
+            <li><a href="home.html"><h3>Home</h3></a></li>
+            <li><a href="feature.html"><h3>Features</h3></a></li>
+            <li><a href="price.html"><h3>Pricing</h3></a></li>
+        </ul>
+    </div>
+    <img src="dashboard.jpg" alt="Dashboard">
+    <img src="realtime.jpg" alt="Real-time Chat" >
+    <img src="multimedia.jpg" alt="Multimedia Interaction">
+    <div id="a1" >
+        <h1>Personalized Study Resources Dashboard</h1>
+        <h1>Real-Time Chat Interface</h1>
+        <h1>Multimedia Interaction Screen </h1>
+        <p>Empowers users to curate and organize study materials, set reminders, and deadlines, optimizing learning efficiency and productivity. Offers a personalized hub for accessing educational resources.
+        </p>
+        <p>Facilitates real-time communication through text, emojis, and media sharing. Enables group discussions and private conversations, fostering social interaction and collaboration among users.
+
+        </p>
+        <p>Allows users to simultaneously watch movies and listen to music within the chat interface. Enhances social engagement by providing a shared entertainment experience.
+        </p>
+    </div>
+</body>
+</html>
